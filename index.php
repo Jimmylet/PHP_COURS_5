@@ -8,7 +8,8 @@
 
 $viewsDir = __DIR__.'/views'; //on doit mettre le chemin depuis la ra cine de l'ordinateur
 $modelsDir = __DIR__.'/models';
-set_include_path($viewsDir . PATH_SEPARATOR . $modelsDir . PATH_SEPARATOR . get_include_path()); // chemin d'inclusions pour éviter d'écrire views/nomdufichier (et séparateur de chemin de l'ordi)
+$controllerDir = __DIR__.'/controllers';
+set_include_path($viewsDir . PATH_SEPARATOR . $modelsDir . PATH_SEPARATOR . $controllerDir . PATH_SEPARATOR . get_include_path()); // chemin d'inclusions pour éviter d'écrire views/nomdufichier (et séparateur de chemin de l'ordi)
 
 
 $dbConfig = parse_ini_file('dd.ini'); // variable pour par parcourir et extraire l'informations du fichier
@@ -32,15 +33,13 @@ try { // code que l'on va essayer d'éxécuter. Il lancer une exception et il fa
     die($exception->getMessage()); // -> est l'équivalent du point en JS. On va chercher une propriété particulière d'un objet.
 }
 
-include ('books.php');
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-    $data = getBook($id);
-}else{
-    $data = getBooks();
-};
+// Essayer de faciliter la logique qui nous mène à produire les données en essayant d'établir une convention
+// qui est basée sur la définition d'une entité.
+$a = isset($_REQUEST['a'])?$_REQUEST['a']:'index'; // index=lister les livres
+$e = isset($_REQUEST['e'])?$_REQUEST['e']:'books';
 
 
+
+include ($e.'controller.php');
+$data = call_user_func($a);
 include('view.php');
-
-?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * singlebook.php
+ * show_books.php
  * Créé par : Jimmy Letecheur
  * Date : 3/03/16
  */
