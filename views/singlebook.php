@@ -9,19 +9,19 @@
 
 
 <h1>
-    <?php echo $book->title; ?> <!-- Le titre du livre -->
+    <?php echo $data['book']->title; ?> <!-- Le titre du livre -->
 </h1>
 
-<?php if ($book->cover): ?> <!-- L'image -->
+<?php if ($data['book']->cover): ?> <!-- L'image -->
 <div class="cover">
-    <img src="<?php echo $book->cover; ?>"
+    <img src="<?php echo $data['book']->cover; ?>"
          alt=""> <!-- cover est un nom de colonne dans la database -->
 </div>
 <?php endif; ?>
 
-<?php if ($book->summary): ?> <!-- Le résumé du livre --> <!-- summary est un nom de colonne dans la database -->
+<?php if ($data['book']->summary): ?> <!-- Le résumé du livre --> <!-- summary est un nom de colonne dans la database -->
     <div class="summary">
-        <?php echo $book->summary; ?>
+        <?php echo $data['book']->summary; ?>
     </div>
 <?php endif; ?>
 

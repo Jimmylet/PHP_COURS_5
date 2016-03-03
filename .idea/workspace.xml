@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d19ae29e-826a-4ae1-91c0-108acc090a70" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/allbooks.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/singlebook.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/view.php" afterPath="$PROJECT_DIR$/views/view.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/books.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allbooks.php" afterPath="$PROJECT_DIR$/views/allbooks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/singlebook.php" afterPath="$PROJECT_DIR$/views/singlebook.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/view.php" afterPath="$PROJECT_DIR$/views/view.php" />
     </list>
     <ignored path="PHP_COURS_5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,27 +29,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2900302">
-              <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
+            <state vertical-scroll-proportion="-8.215686">
+              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
                 <element signature="e#6#74#0#PHP" expanded="true" />
-                <marker date="1457014747000" expanded="true" signature="1702:1736" placeholder="SELECT * FRO... books" />
-                <marker date="1457014747000" expanded="true" signature="1954:1973" placeholder="SELECT * FRO... books" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singlebook.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="books.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/books.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.0">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="6" />
+              <folding>
+                <marker date="1457015486000" expanded="true" signature="215:234" placeholder="SELECT * FRO... books" />
+                <marker date="1457015486000" expanded="true" signature="503:537" placeholder="SELECT * FRO... books" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="singlebook.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/singlebook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.0">
-              <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.37007874">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
               <folding>
                 <element signature="e#6#79#0#PHP" expanded="true" />
+                <marker date="1457015855000" expanded="true" signature="530:556" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -57,8 +72,8 @@
       <file leaf-file-name="allbooks.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/allbooks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.0">
+              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -68,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/views/view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-11.0">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -86,6 +101,9 @@
         <option value="$PROJECT_DIR$/view.php" />
         <option value="$PROJECT_DIR$/allbooks.php" />
         <option value="$PROJECT_DIR$/singlebook.php" />
+        <option value="$PROJECT_DIR$/models/books.php" />
+        <option value="$PROJECT_DIR$/views/view.php" />
+        <option value="$PROJECT_DIR$/views/allbooks.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/views/singlebook.php" />
       </list>
@@ -254,40 +272,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/allbooks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.0">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/allbooks.php">
+    <entry file="file://$PROJECT_DIR$/models/books.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/singlebook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.0">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="37" />
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="6" />
           <folding>
-            <element signature="e#6#79#0#PHP" expanded="true" />
+            <marker date="1457015486000" expanded="true" signature="215:234" placeholder="SELECT * FRO... books" />
+            <marker date="1457015486000" expanded="true" signature="503:537" placeholder="SELECT * FRO... books" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2900302">
-          <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
+        <state vertical-scroll-proportion="-8.215686">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
           <folding>
             <element signature="e#6#74#0#PHP" expanded="true" />
-            <marker date="1457014747000" expanded="true" signature="1702:1736" placeholder="SELECT * FRO... books" />
-            <marker date="1457014747000" expanded="true" signature="1954:1973" placeholder="SELECT * FRO... books" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/singlebook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37007874">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+          <folding>
+            <element signature="e#6#79#0#PHP" expanded="true" />
+            <marker date="1457015855000" expanded="true" signature="530:556" placeholder="..." />
           </folding>
         </state>
       </provider>
