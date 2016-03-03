@@ -20,6 +20,4 @@ function getBook($id){ //Reçoit un ID et renvoie un livre en particulier
     $pdoSt->execute([':id'=>$id]);
     return $pdoSt->fetch();
 
-
-
 }

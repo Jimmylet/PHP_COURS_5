@@ -35,9 +35,18 @@ try { // code que l'on va essayer d'éxécuter. Il lancer une exception et il fa
 
 // Essayer de faciliter la logique qui nous mène à produire les données en essayant d'établir une convention
 // qui est basée sur la définition d'une entité.
-$a = isset($_REQUEST['a'])?$_REQUEST['a']:'index'; // index=lister les livres
-$e = isset($_REQUEST['e'])?$_REQUEST['e']:'books';
+include ('routes.php');
+$defaultRoute = $routes['default'];
+$routeParts = explode('_',$defaultRoute);
+var_dump($routeParts);
+die();
 
+$a = isset($_REQUEST['a'])?$_REQUEST['a']:$routeParts[0]; // index=lister les livres
+$e = isset($_REQUEST['e'])?$_REQUEST['e']:$routeParts[1];
+if(!in_array($a.'_'.$e, $routes)){
+    ///redirection 404
+    die('Ce que vou cherchez n‘est pas ici');
+}
 
 
 include ($e.'controller.php');
