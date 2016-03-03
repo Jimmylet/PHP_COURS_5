@@ -9,11 +9,7 @@
     <![endif]-->
 </head>
 <body>
-    <ul>
-        <?php foreach ($books as $book) : ?>
-        <li><?php echo $book->title; ?></li>
-        <?php endforeach; ?>
-    </ul>
+    <?php include($view); ?>
 
 
 </body>
