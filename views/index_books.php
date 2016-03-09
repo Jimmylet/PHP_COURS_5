@@ -6,4 +6,7 @@
 <?php endforeach; ?>
 </ul>
 
-
+<div class="allbooks">
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>">Allez vers Tous les auteurs</a>
+    <!-- PHP SELF dans ce contexte ce sera toujours index.php -->
+</div>

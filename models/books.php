@@ -18,6 +18,5 @@ function getBook($id){ //Reçoit un ID et renvoie un livre en particulier
     $sqlBook = 'SELECT * FROM books WHERE id = :id';
     $pdoSt = $GLOBALS['cn']->prepare($sqlBook);
     $pdoSt->execute([':id'=>$id]);
-    return $pdoSt->fetch();
-
+    return $pdoSt->fetch(); // pour avoir un seul authors
 }

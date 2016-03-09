@@ -38,8 +38,6 @@ try { // code que l'on va essayer d'éxécuter. Il lancer une exception et il fa
 include ('routes.php');
 $defaultRoute = $routes['default'];
 $routeParts = explode('_',$defaultRoute);
-var_dump($routeParts);
-die();
 
 $a = isset($_REQUEST['a'])?$_REQUEST['a']:$routeParts[0]; // index=lister les livres
 $e = isset($_REQUEST['e'])?$_REQUEST['e']:$routeParts[1];

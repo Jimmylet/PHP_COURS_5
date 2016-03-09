@@ -6,6 +6,6 @@
  */
 
 $routes = [
-    'default' => 'index_books',
-    'showbooks' => 'show_books'
+    'default' => 'index_editors',
+    'showbooks' => 'show_editors',
 ];
