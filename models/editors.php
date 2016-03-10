@@ -1,10 +1,5 @@
 <?php
-/**
- * File: editors.php
- * User: Dylan Schirino
- * Date: 5/03/16
- * Time: 12:16
- */
+
 function getEditors(){ //renvoie une série de livre
     // Essayer de réccupérer la liste des titres des livres
     $sqlEditors = 'SELECT * FROM editors';

@@ -1,11 +1,4 @@
-<!--
-/**
- * File: show_editors.php
- * User: Dylan Schirino
- * Date: 5/03/16
- * Time: 12:20
- */
- -->
+
 <h1> <?php echo $data['editor'] -> name; ?></h1>
 <?php if($data['editor'] ->logo): ?>
     <div class="logo">
