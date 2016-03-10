@@ -9,6 +9,7 @@
     <![endif]-->
 </head>
 <body>
+    <?php include('partials/_main_navigation.php'); ?>
     <?php include($data['view']); ?>
 
 
