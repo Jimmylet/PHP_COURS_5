@@ -11,6 +11,9 @@ $modelsDir = __DIR__.'/models';
 $controllerDir = __DIR__.'/controllers';
 set_include_path($viewsDir . PATH_SEPARATOR . $modelsDir . PATH_SEPARATOR . $controllerDir . PATH_SEPARATOR . get_include_path()); // chemin d'inclusions pour éviter d'écrire views/nomdufichier (et séparateur de chemin de l'ordi)
 
+spl_autoload_register(function($class){
+    include($class . '.php');
+});
 
 $dbConfig = parse_ini_file('dd.ini'); // variable pour par parcourir et extraire l'informations du fichier
 $pdoOptions = [
@@ -20,18 +23,9 @@ $pdoOptions = [
     // permet d'écrire $book->title aulieu de book=['title']
 ];
 
-try { // code que l'on va essayer d'éxécuter. Il lancer une exception et il faut l'attraper.
-    $dsn = sprintf('%s:dbname=%s;host=%s', $dbConfig['driver'], $dbConfig['dbname'], $dbConfig['host']);
-    $cn = new PDO($dsn, $dbConfig['username'], $dbConfig['password'], $pdoOptions); // NOTRE OBJET PDO
-    $cn->exec('SET CHARACTER SET UTF8'); // executer la requête SET CHARACTER SET UTF8
-    $cn->exec('SET NAMES UTF8');
-    /*variable pour la connexion, dans lequel on instancie un objet pdo. On lui donne le nom de la base de donnée mysql. On lui donne
-    le nom d'utilisateur et le mot de passe.
-    //var_dump($cn)
-    //doit donner un résultat object(PDO)#1*/
-} catch (PDOException $exception) {//attraper l'exception. Ici on ne peut stocker qu'un objet de PDOException, c'est le typage.
-    die($exception->getMessage()); // -> est l'équivalent du point en JS. On va chercher une propriété particulière d'un objet.
-}
+spl_autoload_register(function($class){
+    include($class .'php');
+});
 
 // Essayer de faciliter la logique qui nous mène à produire les données en essayant d'établir une convention
 // qui est basée sur la définition d'une entité.
@@ -47,6 +41,10 @@ if(!in_array($a.'_'.$e, $routes)){
 }
 
 
-include ($e.'controller.php');
-$data = call_user_func($a);
+$controller_name = ucfirst($e).'Controller'; //on met ici le nom de la class. ucfirst mets la premiere lettre en majuscule.
+$controller = new $controller_name();
+
+
+$data = call_user_func([$controller, $a]);
+
 include('view.php');

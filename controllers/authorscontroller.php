@@ -5,24 +5,37 @@
  * Date : 8/03/16
  */
 
-function index(){
-    include ('authors.php');
-    $authors = getAuthors();
-    $view = $GLOBALS['a'] . '_' . $GLOBALS['e'] . '.php';
+class AuthorsController{
 
-    return ['authors' => $authors, 'view' => $view];
-}
+    private $authors_model = null;
 
-function show(){
-    include ('authors.php');
-    if (isset($_GET['id'])) {
-        $id = intval($_GET['id']);
-        $author = getAuthor($id);
+    public function __construct()
+    {
+        $this->authors_model = new Authors();
+    }
+
+    function index()
+    {
+        $authors = $this->authors_model->all();
         $view = $GLOBALS['a'] . '_' . $GLOBALS['e'] . '.php';
 
-        return ['author' => $author, 'view' => $view];
+        return ['authors' => $authors, 'view' => $view];
+    }
 
-    } else {
-        die('Il manque l‘identifiant de votre livre');
-    };
+    function show()
+    {
+        if (isset($_GET['id'])) {
+            $id = intval($_GET['id']);
+            $authors = $this->authors_model->find($id);
+            $view = 'show_authors.php';
+            $page_title = 'La fiche du livre&nbsp;:' . ' ' . $authors->name;
+
+            return ['author' => $authors, 'view' => $view, 'page_title' => $page_title];
+
+        } else {
+            die('Il manque l‘identifiant de votre livre');
+        };
+    }
 }
+
+
